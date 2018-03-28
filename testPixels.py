@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, Canvas, PhotoImage
 from math import sin
 
 WIDTH, HEIGHT = 640, 640
