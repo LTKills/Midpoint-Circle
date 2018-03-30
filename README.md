@@ -1,7 +1,7 @@
 # Midpoint-Circle
 Midpoint Circle algorithm implementations and performance analysis using TkInter
 
-## Install
+## Installing
 
 Clone the reposotory: 
 > git clone https://github.com/LTKills/Midpoint-Circle.git
@@ -13,12 +13,12 @@ Make the installation file runable:
 ## Usage
 
 
-## University Report
+## University Report (pt-br)
 https://www.overleaf.com/15173856ycxskxcvgbxj
 
-## Contribute
+## Contributing
 
-PRs accepted.
+Refer to CONTRIBUTING.md
 
 ## License
 
