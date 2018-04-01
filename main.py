@@ -15,6 +15,7 @@ def main():
     radius = int(argv[1])
     repetitions = 100
 
+    # Draw circle for each different algorithm
     mid_point(radius)
     spherical_coordinates(radius)
     traditional(radius)

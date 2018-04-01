@@ -3,10 +3,10 @@ import math
 
 from usefull import WIDTH, HEIGHT, get_img
 
-def spherical_coordinates(radius):
+def spherical_coordinates(radius, auto_delete=False, auto_time=None):
     x0 = WIDTH/2
     y0 = HEIGHT/2
-    img = get_img("Spherical")
+    img = get_img("Spherical", auto_delete, auto_time)
 
     for theta in range(180):
         z = x0 + radius*math.cos(math.radians(theta))
