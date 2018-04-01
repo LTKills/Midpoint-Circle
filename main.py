@@ -1,7 +1,7 @@
 from sys import argv
 from time import process_time
 
-
+from usefull import WIDTH, HEIGHT
 from mid_point import mid_point
 from spherical_coordinates import spherical_coordinates
 from traditional import traditional
@@ -13,7 +13,9 @@ def main():
         print("python3 main.py <RAIO>")
         exit(1)
     radius = int(argv[1])
-    repetitions = 100
+    if not 0 < radius < min(WIDTH, HEIGHT)/2:
+        print("Radius too small, aborting program!")
+        exit(1)
 
     # Draw circle for each different algorithm
     mid_point(radius)
