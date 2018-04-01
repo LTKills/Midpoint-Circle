@@ -1,21 +1,14 @@
-from tkinter import Tk, Canvas, PhotoImage, mainloop
+from tkinter import mainloop
 import math
 
+from usefull import WIDTH, HEIGHT, get_img
 
-def spherical_coordinates(repetitions, radius):
-    WIDTH, HEIGHT = 640, 640
+def spherical_coordinates(radius):
     x0 = WIDTH/2
     y0 = HEIGHT/2
-
-    window = Tk()
-    window.title('Spherical')
-    canvas = Canvas(window, width=WIDTH, height=HEIGHT, bg="#000000")
-    canvas.pack()
-    img = PhotoImage(width=WIDTH, height=HEIGHT)
-    canvas.create_image((WIDTH/2, HEIGHT/2), image=img, state="normal")
+    img = get_img("Spherical")
 
     for theta in range(180):
-
         z = x0 + radius*math.cos(math.radians(theta))
         w1 = y0 + radius*math.sin(math.radians(theta))
         w2 = y0 + radius*math.sin(math.radians(-theta))

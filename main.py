@@ -15,9 +15,9 @@ def main():
     radius = int(argv[1])
     repetitions = 100
 
-    mid_point(repetitions, radius)
-    spherical_coordinates(repetitions, radius)
-    traditional(repetitions, radius)
+    mid_point(radius)
+    spherical_coordinates(radius)
+    traditional(radius)
 
 
 if __name__ == "__main__":

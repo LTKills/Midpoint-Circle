@@ -1,7 +1,5 @@
-from tkinter import Tk, Canvas, PhotoImage, mainloop
-
-WIDTH, HEIGHT = 640, 640
-
+from tkinter import mainloop
+from usefull import WIDTH, HEIGHT, get_img
 
 def write_pixel(img, x, y):
     z = int(WIDTH/2)
@@ -17,18 +15,11 @@ def write_pixel(img, x, y):
     img.put("#ffffff", (z - y, w - x))
 
 
-def mid_point(repetitions, radius):
+def mid_point(radius):
     x = 0
     y = radius
     d = 1 - radius
-
-    window = Tk()
-    window.title('Mid Point')
-    canvas = Canvas(window, width=WIDTH, height=HEIGHT, bg="#000000")
-    canvas.pack()
-    img = PhotoImage(width=WIDTH, height=HEIGHT)
-    canvas.create_image((WIDTH/2, HEIGHT/2), image=img, state="normal")
-
+    img = get_img("Mid Point")
     write_pixel(img, x, y)
     while y > x:
         if d < 0:

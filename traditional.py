@@ -1,17 +1,11 @@
-from tkinter import Tk, Canvas, PhotoImage, mainloop
+from tkinter import mainloop
 import math
 
+from usefull import WIDTH, HEIGHT, get_img
 
-def traditional(repetitions, radius):
-    WIDTH, HEIGHT = 640, 640
+def traditional(radius):
 
-    window = Tk()
-    window.title('Traditional')
-    canvas = Canvas(window, width=WIDTH, height=HEIGHT, bg="#000000")
-    canvas.pack()
-    img = PhotoImage(width=WIDTH, height=HEIGHT)
-    canvas.create_image((WIDTH/2, HEIGHT/2), image=img, state="normal")
-
+    img = get_img("traditional")
     for x in range(-radius, radius):
 
         # Changing coordinates as origin is at bottom left of sceen
