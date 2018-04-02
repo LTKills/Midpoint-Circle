@@ -1,5 +1,4 @@
 # Todo
 - Comment midpoint and spherical files
-- GIFs
-- repetitions
+- repetitions - dont kill window everytime
 - Report

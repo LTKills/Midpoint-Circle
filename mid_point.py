@@ -1,4 +1,5 @@
 from tkinter import mainloop
+
 from usefull import WIDTH, HEIGHT, get_img
 
 def write_pixel(img, x, y):
@@ -15,11 +16,10 @@ def write_pixel(img, x, y):
     img.put("#ffffff", (z - y, w - x))
 
 
-def mid_point(radius, auto_delete=False, auto_time=None):
+def mid_point(img, radius):
     x = 0
     y = radius
     d = 1 - radius
-    img = get_img("Mid Point", auto_delete, auto_time)
     write_pixel(img, x, y)
     while y > x:
         if d < 0:

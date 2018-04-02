@@ -4,9 +4,7 @@ import math
 from usefull import WIDTH, HEIGHT, get_img
 
 
-def traditional(radius, auto_delete=False, auto_time=None):
-
-    img = get_img("traditional", auto_delete, auto_time)
+def traditional(img, radius):
     for x in range(-radius, radius):
 
         # Changing coordinates as origin is at bottom left of sceen
