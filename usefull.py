@@ -1,10 +1,7 @@
-from tkinter import Tk, Canvas, PhotoImage
+from tkinter import Tk, Canvas, PhotoImage, Toplevel
 from collections import OrderedDict
 
 import mid_point
-# from mid_point import mid_point
-# from spherical_coordinates import spherical_coordinates
-# from traditional import traditional
 import traditional
 import spherical_coordinates
 
@@ -14,16 +11,18 @@ FUNCTIONS = OrderedDict([
     ("Spherical Coordinates", spherical_coordinates.spherical_coordinates),
     ("Traditional", traditional.traditional)])
 
-
 WIDTH, HEIGHT = 640, 640
 BACKGROUND_COLOUR = "#000000"
 
-def get_img(name):
-    window = Tk()
+def create_root_window():
+    root = Tk()
+    root.withdraw()
 
+def get_img(root, name):
+    window = Toplevel(root)
     window.title(name)
     canvas = Canvas(window, width=WIDTH, height=HEIGHT, bg=BACKGROUND_COLOUR)
     canvas.pack()
-    img = PhotoImage(width=WIDTH, height=HEIGHT)
+    img = PhotoImage(master=canvas, width=WIDTH, height=HEIGHT)
     canvas.create_image((WIDTH/2, HEIGHT/2), image=img, state="normal")
-    return img
+    return window, img

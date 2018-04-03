@@ -1,4 +1,4 @@
-from tkinter import mainloop
+from tkinter import *#mainloop, update
 
 import usefull
 
@@ -16,7 +16,7 @@ def write_pixel(img, x, y):
     img.put("#ffffff", (z - y, w - x))
 
 
-def mid_point(img, radius):
+def mid_point(window, img, radius):
     x = 0
     y = radius
     d = 1 - radius
@@ -31,4 +31,4 @@ def mid_point(img, radius):
             y -= 1
         write_pixel(img, x, y)
 
-    mainloop()
+    window.update()

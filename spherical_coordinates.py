@@ -3,7 +3,7 @@ import math
 
 import usefull
 
-def spherical_coordinates(img, radius):
+def spherical_coordinates(window, img, radius):
     x0 = usefull.WIDTH/2
     y0 = usefull.HEIGHT/2
 
@@ -16,4 +16,4 @@ def spherical_coordinates(img, radius):
         img.put("#ffffff", (int(z), int(w1)))
         img.put("#ffffff", (int(z), int(w2)))
 
-    mainloop()
+    window.update()

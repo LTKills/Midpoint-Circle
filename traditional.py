@@ -3,7 +3,7 @@ import math
 
 import usefull
 
-def traditional(img, radius):
+def traditional(window, img, radius):
     for x in range(-radius, radius):
 
         # Changing coordinates as origin is at bottom left of sceen
@@ -14,4 +14,4 @@ def traditional(img, radius):
         img.put("#ffffff", (z, int(usefull.HEIGHT/2 + w)))
         img.put("#ffffff", (z, int(usefull.HEIGHT/2 - w)))
 
-    mainloop()
+    window.update()
