@@ -1,13 +1,14 @@
 from time import process_time
 from collections import OrderedDict
 
-from usefull import FUNCTIONS 
+# from usefull import FUNCTIONS
+import usefull
 
 # This is NOT used in the program currently
 WINDOW_TIME = 100 # microseconds
 
 def test_all(repetitions, radius):
-    for name, function in FUNCTIONS.items():
+    for name, function in usefull.FUNCTIONS.items():
         start = process_time()
         for _ in range(repetitions):
             function(radius)

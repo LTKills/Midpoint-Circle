@@ -1,10 +1,10 @@
 from tkinter import mainloop
 
-from usefull import WIDTH, HEIGHT, get_img
+import usefull
 
 def write_pixel(img, x, y):
-    z = int(WIDTH/2)
-    w = int(HEIGHT/2)
+    z = int(usefull.WIDTH/2)
+    w = int(usefull.HEIGHT/2)
 
     img.put("#ffffff", (z + x, w + y))
     img.put("#ffffff", (z + x, w - y))

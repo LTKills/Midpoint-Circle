@@ -1,11 +1,11 @@
 from tkinter import mainloop
 import math
 
-from usefull import WIDTH, HEIGHT, get_img
+import usefull
 
 def spherical_coordinates(img, radius):
-    x0 = WIDTH/2
-    y0 = HEIGHT/2
+    x0 = usefull.WIDTH/2
+    y0 = usefull.HEIGHT/2
 
     for theta in range(180):
         z = x0 + radius*math.cos(math.radians(theta))
