@@ -1,6 +1,5 @@
 from sys import argv
-from time import process_time
-from tkinter import Tk, mainloop
+from tkinter import mainloop
 
 import usefull
 
@@ -17,9 +16,7 @@ def main():
         print("Radius too small, aborting program!")
         exit(1)
 
-    # Create main window and hide it
-    root = Tk()
-    root.withdraw()
+    root = usefull.create_root_window()
 
     # Due to the python garbage collector, it is necessary to keep the window
     #   and img in memory after the foop loop
@@ -31,9 +28,7 @@ def main():
         windows.append((window, img))
         function(window, img, radius)
 
-    # Exit program
-    root.deiconify()
-    root.quit()
+    usefull.exit_window(root)
     mainloop()
 
 if __name__ == "__main__":
