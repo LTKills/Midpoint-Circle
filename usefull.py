@@ -6,10 +6,15 @@ import traditional
 import spherical_coordinates
 
 # We use a OrderedDict to garante that the test is always done in the same order
+"""
 FUNCTIONS = OrderedDict([
     ("Mid Point", mid_point.mid_point),
     ("Spherical Coordinates", spherical_coordinates.spherical_coordinates),
     ("Traditional", traditional.traditional)])
+"""
+
+FUNCTIONS = OrderedDict([
+    ("Spherical Coordinates", spherical_coordinates.spherical_coordinates)])
 
 # Some default values
 WIDTH, HEIGHT = 640, 640
