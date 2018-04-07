@@ -28,4 +28,4 @@ def test_all(repetitions, radius):
     mainloop()
 
 if __name__ == "__main__":
-    test_all(10, 100)
+    test_all(repetitions=100, radius=100)

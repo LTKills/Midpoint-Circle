@@ -11,12 +11,6 @@ FUNCTIONS = OrderedDict([
     ("Spherical Coordinates", spherical_coordinates.spherical_coordinates),
     ("Traditional", traditional.traditional)])
 
-"""
-FUNCTIONS = OrderedDict([
-    ("Mid Point", mid_point.mid_point),
-    ("Spherical Coordinates", spherical_coordinates.spherical_coordinates)])
-    """
-
 # Some default values
 WIDTH, HEIGHT = 640, 640
 BACKGROUND_COLOUR = "#000000"
