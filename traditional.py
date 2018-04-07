@@ -1,17 +1,15 @@
-from tkinter import mainloop
 import math
 
 import usefull
 
 def traditional(window, img, radius):
-    for x in range(-radius, radius):
+    # Since we are only worried with the second octant, we only need to draw
+    #   until the 45 degree angle hits the circle, which happens for
+    #   x = 0.5*sqrt(2)*radius
+    end_x = int(0.5*math.sqrt(2)*radius) + 1
 
-        # Changing coordinates as origin is at bottom left of sceen
-        z = int(x + usefull.WIDTH/2)
-        w = math.sqrt(abs(x**2 - radius**2))
-
-        # Draw under and above x-changed (or z) axis
-        img.put("#ffffff", (z, int(usefull.HEIGHT/2 + w)))
-        img.put("#ffffff", (z, int(usefull.HEIGHT/2 - w)))
+    for x in range(0, end_x):
+        y = int(math.sqrt(abs(x**2 - radius**2)))
+        usefull.write_pixel(img, x, y)
 
     window.update()

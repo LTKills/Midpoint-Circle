@@ -6,19 +6,35 @@ import traditional
 import spherical_coordinates
 
 # We use a OrderedDict to garante that the test is always done in the same order
-"""
 FUNCTIONS = OrderedDict([
     ("Mid Point", mid_point.mid_point),
     ("Spherical Coordinates", spherical_coordinates.spherical_coordinates),
     ("Traditional", traditional.traditional)])
-"""
 
+"""
 FUNCTIONS = OrderedDict([
+    ("Mid Point", mid_point.mid_point),
     ("Spherical Coordinates", spherical_coordinates.spherical_coordinates)])
+    """
 
 # Some default values
 WIDTH, HEIGHT = 640, 640
 BACKGROUND_COLOUR = "#000000"
+
+# Mirrors the eight quadrant on all sides and centers circle.
+def write_pixel(img, x, y):
+    z = int(WIDTH/2)
+    w = int(HEIGHT/2)
+
+    # write pixel on every octant of circunference
+    img.put("#ffffff", (z + x, w + y))
+    img.put("#ffffff", (z + x, w - y))
+    img.put("#ffffff", (z - x, w + y))
+    img.put("#ffffff", (z - x, w - y))
+    img.put("#ffffff", (z + y, w + x))
+    img.put("#ffffff", (z + y, w - x))
+    img.put("#ffffff", (z - y, w + x))
+    img.put("#ffffff", (z - y, w - x))
 
 # Close a window
 def close_window(window):
