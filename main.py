@@ -13,7 +13,7 @@ def main():
     # Check if valid radius value
     radius = int(argv[1])
     if not 0 < radius < (min(usefull.WIDTH, usefull.HEIGHT)/2)-5:
-        print("Radius too small, aborting program!")
+        print("Radius too small or too big, aborting program!")
         exit(1)
 
     root = usefull.create_root_window()
