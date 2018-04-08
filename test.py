@@ -8,6 +8,7 @@ def test_all(repetitions, max_radius):
         print("Radius too small for usefull testing conditions, please use " +
               "a bigger radius")
         exit(1)
+    step = int(max_radius/10)
     root = usefull.create_root_window()
 
     # Due to the python garbage collector, it is necessary to keep the window
@@ -20,10 +21,10 @@ def test_all(repetitions, max_radius):
         #Create window and draw circle
         window, img = usefull.get_img(root, name)
         windows.append((window, img))
-        for _ in range(repetitions):
-            for radius in range(int(max_radius/10), max_radius+1, int(max_radius/10)):  
-                function(window, img, radius)
-            print(_)
+        for rep in range(repetitions):
+            for multi in range(1, 11):
+                function(window, img, multi*step, usefull.COLORS[
+                    int(rep*multi % 11)])
 
         # Store total total time and update window
         times[name] = process_time()-start

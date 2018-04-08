@@ -26,7 +26,7 @@ def main():
     for name, function in usefull.FUNCTIONS.items():
         window, img = usefull.get_img(root, name)
         windows.append((window, img))
-        function(window, img, radius)
+        function(window, img, radius, usefull.COLORS[0])
 
     usefull.exit_window(root)
     mainloop()

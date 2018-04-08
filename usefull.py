@@ -14,21 +14,34 @@ FUNCTIONS = OrderedDict([
 # Some default values
 WIDTH, HEIGHT = 640, 640
 BACKGROUND_COLOUR = "#000000"
+COLORS = [
+    "#3ccb05", # light green
+    "#802abe", # dark purple
+    "#71e8ff", # light blue
+    "#f4c035", # yellow
+    "#fd14c2", # pink
+    "#1a319e", # dark blue
+    "#881c5a", # wine
+    "#32b83a", # dark green
+    "#3ccb05", # light green
+    "#802abe", # dark purple
+    "#71e8ff" # light blue
+]
 
 # Mirrors the eight quadrant on all sides and centers circle.
-def write_pixel(img, x, y):
+def write_pixel(img, x, y, color):
     z = int(WIDTH/2)
     w = int(HEIGHT/2)
 
     # write pixel on every octant of circunference
-    img.put("#ffffff", (z + x, w + y))
-    img.put("#ffffff", (z + x, w - y))
-    img.put("#ffffff", (z - x, w + y))
-    img.put("#ffffff", (z - x, w - y))
-    img.put("#ffffff", (z + y, w + x))
-    img.put("#ffffff", (z + y, w - x))
-    img.put("#ffffff", (z - y, w + x))
-    img.put("#ffffff", (z - y, w - x))
+    img.put(color, (z + x, w + y))
+    img.put(color, (z + x, w - y))
+    img.put(color, (z - x, w + y))
+    img.put(color, (z - x, w - y))
+    img.put(color, (z + y, w + x))
+    img.put(color, (z + y, w - x))
+    img.put(color, (z - y, w + x))
+    img.put(color, (z - y, w - x))
 
 # Close a window
 def close_window(window):
