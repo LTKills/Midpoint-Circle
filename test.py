@@ -3,7 +3,11 @@ from tkinter import mainloop
 
 import usefull
 
-def test_all(repetitions, radius):
+def test_all(repetitions, max_radius):
+    if max_radius < 100:
+        print("Radius too small for usefull testing conditions, please use " +
+              "a bigger radius")
+        exit(1)
     root = usefull.create_root_window()
 
     # Due to the python garbage collector, it is necessary to keep the window
@@ -17,7 +21,9 @@ def test_all(repetitions, radius):
         window, img = usefull.get_img(root, name)
         windows.append((window, img))
         for _ in range(repetitions):
-            function(window, img, radius + _)
+            for radius in range(int(max_radius/10), max_radius+1, int(max_radius/10)):  
+                function(window, img, radius)
+            print(_)
 
         # Store total total time and update window
         times[name] = process_time()-start
@@ -28,4 +34,4 @@ def test_all(repetitions, radius):
     mainloop()
 
 if __name__ == "__main__":
-    test_all(repetitions=100, radius=100)
+    test_all(repetitions=10, max_radius=300)
